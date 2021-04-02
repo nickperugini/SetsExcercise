@@ -6,6 +6,7 @@ import java.util.Set;
 public class Cat2 {
 	String name;
 	
+	static Set<Cat2> intersection = new HashSet<Cat2>();
 	
 	
 	public Cat2(String name) {
@@ -19,7 +20,9 @@ public class Cat2 {
 	@Override
 	public boolean equals(Object o){
 		Cat2 c = (Cat2) o;
-		System.out.println("here");
+		if(this.name==c.name) {
+			addIntersection(c);
+		}
 		return this.name==c.name;
 	}
 	
@@ -30,8 +33,8 @@ public class Cat2 {
 		return prime * hash + ((name == null) ? 0 : name.hashCode());
 	}
 	
-	public void printIntersection(String name) {
-		System.out.println("Intersection: " + name);
+	public static void addIntersection(Cat2 c) {
+		intersection.add(c);
 	}
 	
 	
@@ -51,18 +54,22 @@ public class Cat2 {
 		Set<Cat2> cats2 = new HashSet<Cat2>();
 		
 		Cat2 lucy = new Cat2("Lucy");
+		Cat2 phideaux2 = new Cat2("Phideaux");
+		
+		intersection.clear();
 		
 		cats1.add(fido);
 		cats1.add(phideaux);
 		
 		cats2.add(lucy);
-		cats2.add(fido2);
+		cats2.add(phideaux2);
 		
 		Set<Cat2> unionCats = new HashSet<Cat2>();
 		unionCats.addAll(cats1);
 		unionCats.addAll(cats2);
 		
 		System.out.println("Union: " + unionCats);
+		System.out.println("Intersection: " + intersection);
 		
 		
 		
