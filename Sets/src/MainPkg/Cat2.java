@@ -17,10 +17,15 @@ public class Cat2 {
 	}
 	
 	@Override 
-	public boolean equals(Object o){
-		if(this == o){
+	public boolean equals(Cat2 o){
+		if(this.name == o.name){
 			return false;
 		}
+	}
+	
+	@Override
+	public int hashCode() {
+		
 	}
 	
 	public static void main(String args[]) {
