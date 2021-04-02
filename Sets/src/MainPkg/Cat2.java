@@ -37,10 +37,29 @@ public class Cat2 {
 		Cat2 phideaux = new Cat2("Phideaux");
 		Cat2 fido2 = new Cat2("Fido");
 		
+		
 		cats.add(fido);
 		cats.add(phideaux);
 		cats.add(fido2);
 		System.out.println(cats);
+		
+		Set<Cat2> cats1 = new HashSet<Cat2>();
+		Set<Cat2> cats2 = new HashSet<Cat2>();
+		
+		Cat2 lucy = new Cat2("Lucy");
+		
+		cats1.add(fido);
+		cats1.add(phideaux);
+		
+		cats2.add(lucy);
+		cats2.add(phideaux);
+		
+		Set<Cat2> allCats = new HashSet<Cat2>();
+		allCats.addAll(cats1);
+		allCats.addAll(cats2);
+		
+		System.out.println(allCats);
 	}
+	
 	
 }
