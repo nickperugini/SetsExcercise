@@ -16,17 +16,20 @@ public class Cat2 {
 		return name;
 	}
 	
-	@Override 
-	public boolean equals(Cat2 o){
-		if(this.name == o.name){
-			return false;
-		}
+	@Override
+	public boolean equals(Object o){
+	Cat2 c = (Cat2) o;
+	return this.name==c.name;
 	}
 	
 	@Override
 	public int hashCode() {
-		
+		final int prime = 31;
+		int hash=1;
+		return prime * hash + ((name == null) ? 0 : name.hashCode());
 	}
+	
+	
 	
 	public static void main(String args[]) {
 		Set<Cat2> cats = new HashSet<Cat2>();
@@ -37,6 +40,7 @@ public class Cat2 {
 		cats.add(fido);
 		cats.add(phideaux);
 		cats.add(fido2);
+		System.out.println(cats);
 	}
 	
 }
