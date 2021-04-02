@@ -19,6 +19,9 @@ public class Cat2 {
 	@Override
 	public boolean equals(Object o){
 	Cat2 c = (Cat2) o;
+	if(this.name==c.name) {
+		printIntersection(this.name);
+	}
 	return this.name==c.name;
 	}
 	
@@ -29,6 +32,9 @@ public class Cat2 {
 		return prime * hash + ((name == null) ? 0 : name.hashCode());
 	}
 	
+	public void printIntersection(String name) {
+		System.out.println("Intersection: " + name);
+	}
 	
 	
 	public static void main(String args[]) {
@@ -54,11 +60,14 @@ public class Cat2 {
 		cats2.add(lucy);
 		cats2.add(phideaux);
 		
-		Set<Cat2> allCats = new HashSet<Cat2>();
-		allCats.addAll(cats1);
-		allCats.addAll(cats2);
+		Set<Cat2> unionCats = new HashSet<Cat2>();
+		unionCats.addAll(cats1);
+		unionCats.addAll(cats2);
 		
-		System.out.println(allCats);
+		System.out.println("Union: " + unionCats);
+		
+		
+		
 	}
 	
 	
