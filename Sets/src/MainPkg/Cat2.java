@@ -18,11 +18,9 @@ public class Cat2 {
 	
 	@Override
 	public boolean equals(Object o){
-	Cat2 c = (Cat2) o;
-	if(this.name==c.name) {
-		printIntersection(this.name);
-	}
-	return this.name==c.name;
+		Cat2 c = (Cat2) o;
+		System.out.println("here");
+		return this.name==c.name;
 	}
 	
 	@Override
@@ -58,7 +56,7 @@ public class Cat2 {
 		cats1.add(phideaux);
 		
 		cats2.add(lucy);
-		cats2.add(phideaux);
+		cats2.add(fido2);
 		
 		Set<Cat2> unionCats = new HashSet<Cat2>();
 		unionCats.addAll(cats1);
