@@ -1,3 +1,7 @@
+/* 
+1. In order to make it so that only one cat appeared if they had the same name in the set, the equals() and hashCode() methods were overwritten.
+2. 
+*/
 package MainPkg;
 
 import java.util.HashSet;
